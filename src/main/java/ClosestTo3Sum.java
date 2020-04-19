@@ -44,5 +44,37 @@ public class ClosestTo3Sum {
 
     public static void main(String[] args) {
         System.out.println(getClosest3SumIndex(new int[] {2, 1, -5, 4}, 1).toString());
+        strStr("hello", "ll");
+    }
+
+    public static int strStr(String haystack, String needle) {
+        int needleLen = needle.length();
+        int hayLength = haystack.length();
+        int hayPtr = 0;
+        int limit = hayLength - needleLen + 1;
+
+        while (hayPtr < limit) {
+            while (hayPtr < limit && haystack.charAt(hayPtr) != needle.charAt(0)) {
+                hayPtr++;
+            }
+
+            int needlePtr = 0; int currLen = 0;
+
+            while (hayPtr < hayLength &&
+                needlePtr < needleLen &&
+                haystack.charAt(hayPtr) == needle.charAt(needlePtr)) {
+                hayPtr++;
+                needlePtr++;
+                currLen++;
+            }
+
+            if (currLen == needleLen) {
+                return hayPtr - needleLen;
+            }
+
+            hayPtr = hayPtr - currLen + 1; // +1 because we have to increment the counter
+        }
+
+        return 0;
     }
 }
