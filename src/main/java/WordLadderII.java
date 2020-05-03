@@ -92,5 +92,9 @@ public class WordLadderII {
     List<String> subList = new ArrayList<>();
     subList.add(beginWord);
     dfs(result, subList, beginWord, endWord, map);
+
+    for (List l : result) {
+      int s = l.size();
+    }
   }
 }
