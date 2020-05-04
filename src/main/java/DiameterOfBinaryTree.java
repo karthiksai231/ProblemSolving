@@ -1,4 +1,3 @@
-import javafx.util.Pair;
 
 public class DiameterOfBinaryTree {
 
@@ -22,31 +21,41 @@ public class DiameterOfBinaryTree {
         }
     }
 
+    public static class Pair{
+        public int includedCount;
+        public int excludedCount;
+
+        Pair(int includedCount, int excludedCount) {
+            this.includedCount = includedCount;
+            this.excludedCount = excludedCount;
+        }
+    }
+
 
     public static int diameterOfBinaryTree(TreeNode root) {
         if (root == null) {
             return 0;
         }
 
-        Pair<Integer, Integer> result = helper(root);
-        return Math.max(result.getKey(), result.getValue());
+        Pair result = helper(root);
+        return Math.max(result.includedCount, result.excludedCount) - 1;
     }
 
-    public static Pair<Integer, Integer> helper(TreeNode root) {
+    public static Pair helper(TreeNode root) {
         if (root == null) {
-            return new Pair<Integer, Integer>(0, 0);
+            return new Pair(0, 0);
         }
 
-        Pair<Integer, Integer> left = helper(root.left);
-        Pair<Integer, Integer> right = helper(root.right);
+        Pair left = helper(root.left);
+        Pair right = helper(root.right);
 
-        int path = Math.max(left.getValue(), right.getValue());
+        int path = Math.max(left.excludedCount, right.excludedCount);
 
-        if (left.getKey() + right.getKey() + 1 > path) {
-            path = left.getKey() + right.getKey() + 1;
+        if (left.includedCount + right.includedCount + 1 > path) {
+            path = left.includedCount + right.includedCount + 1;
         }
 
-        return new Pair<>(Math.max(left.getKey(), right.getKey()) + 1, path);
+        return new Pair(Math.max(left.includedCount, right.includedCount) + 1, path);
     }
 
     public static void main (String[] args) {
