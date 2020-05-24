@@ -17,7 +17,7 @@ public class BasicCalculator {
     /*
     0 + 3 + 2  (0 -> placeholder)
 
-    prev num sum prevop
+    prev num sum prev op
     0     0   0   +
           3
     3     0   0   +

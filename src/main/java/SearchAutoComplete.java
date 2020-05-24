@@ -95,3 +95,12 @@ public class SearchAutoComplete {
     return res;
   }
 }
+
+class SearchTest {
+  public static void main(String[] args) {
+    String[] sentences = new String[] {"i love you", "island", "ironman", "i love leetcode"};
+    int[] times = new int[] {5, 3, 2, 2};
+    SearchAutoComplete searchAutoComplete = new SearchAutoComplete(sentences, times);
+    searchAutoComplete.input('i');
+  }
+}
