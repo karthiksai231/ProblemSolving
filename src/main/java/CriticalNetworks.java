@@ -68,7 +68,7 @@ public class CriticalNetworks {
       dfs(child, map, visited, lows, parent, res);
 
       // Critical Network
-      if (lows[child] > visited[node]) {
+      if (lows[child] > lows[node]) {
         List<Integer> list = new ArrayList<>();
         list.add(node);
         list.add(child);
