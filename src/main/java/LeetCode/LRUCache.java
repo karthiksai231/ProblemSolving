@@ -80,6 +80,7 @@ public class LRUCache {
     return res;
   }
 
+  // Because the Head and Tail are always new we will pop tail - 1 node.
   public static void removeNode(DLinkedList node) {
     DLinkedList prev = node.prev;
     DLinkedList next = node.next;
