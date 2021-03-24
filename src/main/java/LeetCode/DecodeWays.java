@@ -29,6 +29,6 @@ public class DecodeWays {
   }
 
   public static void main(String[] args) {
-    numDecoding("12");
+    System.out.println(numDecoding("122245"));
   }
 }
