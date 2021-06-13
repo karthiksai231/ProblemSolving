@@ -38,6 +38,7 @@ public class InsertDeleteGetRandom {
 
       int index = map.get(value);
 
+      // If the index is not at the end on the list
       if (index < nums.size() - 1) {
         int endNum = nums.get(nums.size() - 1);
         nums.set(index, endNum);
