@@ -40,13 +40,14 @@ public class MergeKSortedLists {
 
   public static void main(String[] args) {
     List<ListNode> lists = new ArrayList<>();
+    lists.add(getListNode(new int[] {10}));
     lists.add(getListNode(new int[] {1, 4, 5}));
     lists.add(getListNode(new int[] {1, 3, 4}));
     lists.add(getListNode(new int[] {2, 6}));
 
-    ListNode[] nodes = new ListNode[3];
+    ListNode[] nodes = new ListNode[4];
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
       nodes[i] = lists.get(i);
     }
 
