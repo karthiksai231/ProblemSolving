@@ -23,6 +23,6 @@ public class SubarraySumEqualsK {
   }
 
   public static void main(String[] args) {
-    System.out.println(subArray(new int[] {1, 2, 3}, 3));
+    System.out.println(subArray(new int[] {1, 2, 8, 3}, 3));
   }
 }
