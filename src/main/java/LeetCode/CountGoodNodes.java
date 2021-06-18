@@ -1,7 +1,5 @@
 package LeetCode;
 
-import apple.laf.JRSUIUtils;
-
 public class CountGoodNodes {
   int goodNodes;
   public int goodNodes(TreeNode root) {
