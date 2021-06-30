@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GroupAnagrams {
-  public List<List<String>> groupAnagrams(String[] strs) {
+  public static List<List<String>> groupAnagrams(String[] strs) {
     if (strs == null || strs.length == 0) {
       return  new ArrayList<>();
     }
@@ -30,5 +30,9 @@ public class GroupAnagrams {
     }
 
     return new ArrayList<>(map.values());
+  }
+
+  public static void main(String[] args) {
+    groupAnagrams(new String[] {"eat", "tea"});
   }
 }
