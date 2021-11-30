@@ -25,4 +25,22 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
     return max;
   }
+
+  public static int lengthOfLongestSubstrings(String s)
+  {
+    int ans = 0;
+    int[] index = new int[128];
+    int len = s.length();
+
+    for (int j =0, i=0; j<len;j++){
+      i = Math.max(index[s.charAt(j)], i );
+      ans = Math.max(ans, j-i+1);
+      index[s.charAt(j)] = j+1;
+    }
+    return ans;
+  }
+
+  public static void main(String[] args) {
+    lengthOfLongestSubstrings("abcabcbb");
+  }
 }
