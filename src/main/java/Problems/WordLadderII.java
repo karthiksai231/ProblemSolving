@@ -73,6 +73,10 @@ public class WordLadderII {
     }
   }
 
+  private List<List<String>> findLadder(String beginWord, String endWord, List<String> wordList) {
+    return null;
+  }
+
   public static void main(String[] args) {
     String beginWord = "hit";
     String endWord = "cog";
@@ -98,5 +102,11 @@ public class WordLadderII {
     for (List l : result) {
       int s = l.size();
     }
+  }
+
+
+  public void methodA() {
+    String s = "";
+    s.toCharArray();
   }
 }
